@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const RegistrationForm = () => {
-  const [email, setEmail] = useState<string>("");
+  const [email, setEmail] = useState("");
   const isAuth = useSelector((state) => state.authReducer.isAuth);
-  const [password, setPassword] = useState<string>("");
-  const [firstname, setFirstname] = useState<string>("");
-  const [lastname, setLastname] = useState<string>("");
+  const [password, setPassword] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const buttonHandlerRegister = async (

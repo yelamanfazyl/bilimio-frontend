@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const [isAuthState, setIsAuthState] = useState<boolean>(false);
+  const [isAuthState, setIsAuthState] = useState(false);
   const dispatch = useAppDispatch();
   //const isAuth = useSelector((state: any) => state.authReducer.isAuth);
   const navigate = useNavigate();
