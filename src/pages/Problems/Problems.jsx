@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Problems = () => {
-  const [problems, setProblems] = useState<Array<object>>([]);
+  const [problems, setProblems] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
