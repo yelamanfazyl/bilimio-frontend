@@ -1,6 +1,6 @@
 import LoginForm from "@/components/LoginForm/LoginForm";
 
-const Login: React.FC = () => {
+const Login = () => {
   return <LoginForm />;
 };
 

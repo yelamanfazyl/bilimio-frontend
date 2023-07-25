@@ -7,14 +7,14 @@ import { toast } from "react-toastify";
 
 const RegistrationForm = () => {
   const [email, setEmail] = useState<string>("");
-  const isAuth = useSelector((state: any) => state.authReducer.isAuth);
+  const isAuth = useSelector((state) => state.authReducer.isAuth);
   const [password, setPassword] = useState<string>("");
   const [firstname, setFirstname] = useState<string>("");
   const [lastname, setLastname] = useState<string>("");
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const buttonHandlerRegister = async (
-    event: React.MouseEvent<HTMLButtonElement>
+    event
   ) => {
     event.preventDefault();
     await dispatch(registration({ email, password, firstname, lastname }));

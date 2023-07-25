@@ -7,11 +7,11 @@ import { toast } from "react-toastify";
 
 const LoginForm = () => {
   const [email, setEmail] = useState<string>("");
-  const isAuth = useSelector((state: any) => state.authReducer.isAuth);
+  const isAuth = useSelector((state) => state.authReducer.isAuth);
   const [password, setPassword] = useState<string>("");
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const buttonHandler = async (event: React.MouseEvent<HTMLButtonElement>) => {
+  const buttonHandler = async (event) => {
     event.preventDefault();
     await dispatch(login({ email, password }));
     if (isAuth) {
