@@ -29,7 +29,7 @@ const ProblemItem = () => {
     }
   }, []);
 
-  const handleCheck = async (e: any) => {
+  const handleCheck = async (e) => {
     if (e.target.getAttribute("correct") == "True") {
       await axios.post(
         `${API_URL}/problems/${_id}/submit`,

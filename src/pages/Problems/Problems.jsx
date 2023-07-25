@@ -9,7 +9,6 @@ import { toast } from "react-toastify";
 const Problems = () => {
   const [problems, setProblems] = useState<Array<object>>([]);
   const navigate = useNavigate();
-  const isAuth = useSelector((state: any) => state.authReducer.isAuth);
 
   useEffect(() => {
     if (localStorage.getItem("token") == undefined) {

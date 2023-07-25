@@ -3,13 +3,14 @@ import Layout from "@/components/Layout/Layout";
 import { API_URL } from "@/http";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const AnyProfile: React.FC = () => {
-  const { email } = useParams();
-  const [userData, setUserData] = useState<any>();
+const Profile = () => {
+  const [userData, setUserData] = useState();
   const navigate = useNavigate();
+  const isAuth = useSelector((state) => state.authReducer.isAuth);
 
   useEffect(() => {
     if (!localStorage.getItem("token")) {
@@ -18,12 +19,15 @@ const AnyProfile: React.FC = () => {
     }
 
     const fetchUser = async () => {
-      const response = await axios.get(`${API_URL}/auth/user/${email}`);
+      const response = await axios.get(`${API_URL}/auth/user/`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
       setUserData(response.data);
     };
-    console.log(userData);
 
-    fetchUser()
+    fetchUser();
   }, []);
 
   return (
@@ -63,16 +67,22 @@ const AnyProfile: React.FC = () => {
             <div className="flex flex-col w-4/6 gap-2">
               <div className="flex flex-row w-full h-1/4 gap-2">
                 <div className="flex flex-col w-full bg-[#282828] rounded-md h-full justify-center items-start px-6 py-4">
-                  <div className="flex justify-center flex-col w-full gap-2">
-                  <div className="flex flex-col">
-                      <p className="text-[12px] text-white">Easy</p>
-                      <div className="relative h-2 w-full overflow-hidden rounded-full max-w-none flex justify-between">
-                        <div
-                          className={`absolute h-full bg-green-500`}
-                          style={{width: `${Math.floor(
-                            (userData["easy"] / userData["easy_total"]) * 100
-                          )}%`}}
-                        ></div>
+                  <h3 className="text-white">Количество решенных задач:</h3>
+                  <div className="flex justify-center flex-col w-full gap-2 py-2">
+                    <div className="flex flex-row w-full justify-between">
+                      <div className="w-full">
+                        <p className="text-[12px] text-white">Easy</p>
+                        <div className="relative h-2 w-full overflow-hidden rounded-full max-w-none flex justify-between">
+                          <div
+                            className={`absolute h-full bg-green-500`}
+                            style={{
+                              width:
+                                (userData["easy"] / userData["easy_total"]) *
+                                  100 +
+                                "%",
+                            }}
+                          ></div>
+                        </div>
                       </div>
                     </div>
                     <div className="flex flex-col">
@@ -80,9 +90,12 @@ const AnyProfile: React.FC = () => {
                       <div className="relative h-2 w-full overflow-hidden rounded-full max-w-none flex justify-between">
                         <div
                           className={`absolute h-full bg-yellow-300`}
-                          style={{width: `${Math.floor(
-                            (userData["medium"] / userData["medium_total"]) * 100
-                          )}%`}}
+                          style={{
+                            width:
+                              (userData["medium"] / userData["medium_total"]) *
+                                100 +
+                              "%",
+                          }}
                         ></div>
                       </div>
                     </div>
@@ -91,9 +104,12 @@ const AnyProfile: React.FC = () => {
                       <div className="relative h-2 w-full overflow-hidden rounded-full max-w-none flex justify-between">
                         <div
                           className={`absolute h-full bg-red-700`}
-                          style={{width: `${Math.floor(
-                            (userData["hard"] / userData["hard_total"]) * 100
-                          )}%`}}
+                          style={{
+                            width:
+                              (userData["hard"] / userData["hard_total"]) *
+                                100 +
+                              "%",
+                          }}
                         ></div>
                       </div>
                     </div>
@@ -124,4 +140,4 @@ const AnyProfile: React.FC = () => {
   );
 };
 
-export default AnyProfile;
+export default Profile;

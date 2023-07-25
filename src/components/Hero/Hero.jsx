@@ -5,7 +5,7 @@ import hero_img from "../../assets/images/hero_img.png";
 
 const Hero = () => {
   const navigate = useNavigate();
-  const isAuth = useSelector((state: any) => state.authReducer.isAuth);
+  const isAuth = useSelector((state) => state.authReducer.isAuth);
 
   return (
     <div className="flex flex-row items-center h-1/2 gap-12 mt-20">

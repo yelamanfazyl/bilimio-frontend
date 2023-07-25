@@ -1,10 +1,6 @@
 import Calendar from "react-github-contribution-calendar";
 
-interface CalendarProps {
-  submissions: object;
-}
-
-const CalendarGrid: React.FC<CalendarProps> = ({ submissions }) => {
+const CalendarGrid = ({ submissions }) => {
   var values = {};
 
   for (let [key, value] of Object.entries(submissions)) {

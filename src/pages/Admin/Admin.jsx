@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { API_URL } from "@/http";
 
-const Admin: React.FC = () => {
+const Admin = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: "",
@@ -40,7 +40,7 @@ const Admin: React.FC = () => {
     }
   }, []);
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -48,7 +48,7 @@ const Admin: React.FC = () => {
     }));
   };
 
-  const handleSubmit = async (event: React.FormEvent) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const { title, description, difficulty, topic } = formData;
     
@@ -104,7 +104,7 @@ const Admin: React.FC = () => {
     toast.success("Задача успешно добавлена!");
   };
 
-  const handleGenerate = async (event: React.FormEvent) => {
+  const handleGenerate = async (event) => {
     event.preventDefault();
 
     const { topic } = formData;
