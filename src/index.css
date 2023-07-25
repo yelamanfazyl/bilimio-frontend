@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --purple: rgb(99, 102, 241);
+  --violet: rgb(173, 137, 137);
+  --pink: rgb(255, 4, 0);
+}
+
+html,
+body {
+  background-color: #1a1a1a;
+}
+
+body {
+  font-family: "Inter";
+}
+
+.text-gradient {
+  color: black;
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
