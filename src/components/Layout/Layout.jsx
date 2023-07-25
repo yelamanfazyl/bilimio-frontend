@@ -1,10 +1,6 @@
 import Navbar from "../Navbar/Navbar";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <div className="bg-[#1A1A1A] h-screen">
       <Navbar />

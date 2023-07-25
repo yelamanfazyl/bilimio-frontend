@@ -1,7 +1,7 @@
 import RegistrationForm from "@/components/RegistrationForm/RegistrationForm";
 import React from "react";
 
-const Registration: React.FC = () => {
+const Registration = () => {
   return <RegistrationForm />;
 };
 
