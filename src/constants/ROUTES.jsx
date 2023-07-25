@@ -9,14 +9,7 @@ import Profile from "@/pages/Profile/Profile";
 import { Role } from "@/ts/types";
 import Admin from "@/pages/Admin/Admin";
 
-type IRoute = {
-  name: string;
-  path: string;
-  component: React.ReactElement;
-  roles: Role[];
-};
-
-export const ROUTES: IRoute[] = [
+export const ROUTES = [
   {
     name: "Main",
     path: "/",
