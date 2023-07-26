@@ -8,8 +8,8 @@ const ProblemDiscussion = () => {
   const { _id } = useParams();
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
-  const [title, setTitle] = useState<string>("");
-  const [content, setContent] = useState<string>("");
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
   useEffect(() => {
     if (_id) {
