@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { ROUTES } from "./constants/ROUTES";
+import { Analytics } from '@vercel/analytics/react';
 
 const App = () => {
   const user = {
@@ -22,6 +23,7 @@ const App = () => {
         )}
       </Routes>
       <ToastContainer />
+      <Analytics />
     </div>
   );
 };
