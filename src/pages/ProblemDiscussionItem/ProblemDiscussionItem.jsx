@@ -24,13 +24,15 @@ const ProblemDiscussionItem = () => {
 
       fetchProblem();
     }
+
+    console.log(post);
   }, []);
 
   return (
     <Layout>
       <div className="h-3/4 w-2/4 px-6 py-4 border border-gray-400 rounded-md text-white flex flex-col justify-start mx-auto">
-        <div className="w-full flex flex-row justify-between items-center h-2/6">
-          <p className="text-[16px] text-white font-bold">{post["title"]}</p>
+        <div className="w-full flex flex-row justify-between items-center">
+          <p className="text-[32px] text-white font-bold">{post["title"]}</p>
           <p className="text-[16px] text-white font-medium">
             {post["created_at"]?.slice(0, 10)}
           </p>
