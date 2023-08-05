@@ -50,9 +50,9 @@ const ProblemItem = () => {
     <Layout>
       {problem ? (
         <div className="flex flex-row justify-center items-center w-full h-full mt-4 gap-1 mb-4">
-          <div className="w-1/2 flex flex-col justify-start items-center h-full border rounded-md gap-4 px-8 py-6">
-            <div className="flex flex-col h-1/2">
-              <div className="flex flex-col justify-between items-start w-full gap-2 border-b-[0.5px] py-2">
+          <div className="lg:w-1/2 w-full flex flex-col justify-start items-center h-full border rounded-md gap-4 px-6 py-6">
+            <div className="flex flex-col h-1/2 w-full px-2">
+              <div className="flex flex-col justify-between items-start w-full gap-2 border-b-[0.5px]">
                 <div className="flex w-full flex-row justify-between items-center">
                   <p className="text-[20px] text-white font-semibold">
                     {problem["title"]}
@@ -116,7 +116,7 @@ const ProblemItem = () => {
               </div>
             </div>
           </div>
-          <div className="w-1/2 flex flex-col justify-center items-center h-full gap-1">
+          <div className="lg:w-1/2 invisible lg:visible flex flex-col justify-center items-center h-full gap-1">
             <div className="h-full flex flex-col justify-center items-center w-full border rounded-md">
               <Excalidraw />
             </div>

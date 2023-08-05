@@ -12,6 +12,7 @@
 html,
 body {
   background-color: #1a1a1a;
+  overflow-x: hidden;
 }
 
 body {
@@ -33,3 +34,4 @@ body {
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
 }
+
